@@ -1,0 +1,117 @@
+node ./start.mjs time >> output.txt ;
+
+2024-01-09T12:47:28.742Z
+{
+  TimeStamp: 1704804448,
+  TimeLocal: '1/9/2024, 6:17:28 PM',
+  UTCTime: '1/9/2024, 12:47:28 PM'
+}
+node ./start.mjs time 'today' >> output.txt ;
+today
+{
+  TimeStamp: 1704804448,
+  TimeLocal: '1/9/2024, 6:17:28 PM',
+  UTCTime: '1/9/2024, 12:47:28 PM'
+}
+node ./start.mjs time '1704747449' >> output.txt ;
+1704747449
+2024-01-08T20:57:29.000Z
+{
+  TimeStamp: 1704747449,
+  TimeLocal: '1/9/2024, 2:27:29 AM',
+  UTCTime: '1/8/2024, 8:57:29 PM'
+}
+node ./start.mjs time '6 Mar 2017 21:22:23 GMT' >> output.txt ;
+6 Mar 2017 21:22:23 GMT
+{
+  TimeStamp: 1488835343,
+  TimeLocal: '3/7/2017, 2:52:23 AM',
+  UTCTime: '3/6/2017, 9:22:23 PM'
+}
+node ./start.mjs lorem 32 >> output.txt ;
+Lorem ipsum cum dapibus amet curae consectetur aliquet at condimentum dictum 
+conubia aliquam diam aenean adipiscing class consequat ad 
+cras auctor blandit convallis congue accumsan cubilia bibendum 
+ante curabitur arcu commodo aptent ac a 
+node ./start.mjs lorem >> output.txt ;
+Lorem ipsum accumsan auctor ac aenean ante donec dui curae dictum class est diam curabitur convallis 
+consequat dapibus dictumst commodo cras enim eros aliquam arcu eleifend cubilia 
+dolor adipiscing conubia congue erat a aliquet blandit ad cum aptent 
+amet eget et duis eu egestas elementum consectetur dignissim condimentum etiam elit at bibendum 
+
+node ./start.mjs httpCodes 417 >> output.txt ;
+{
+  meaning: 'Expectation Failed',
+  desc: 'The server cannot meet the requirements of the Expect request-header field.'
+}
+node ./start.mjs httpCodes 200 >> output.txt ;
+{
+  meaning: 'OK',
+  desc: 'Request successful, returning requested data.'
+}
+node ./start.mjs ext 'image/jpeg' >> output.txt ;
+{ extension: [ 'jpeg', 'jpg', 'jpe' ], mime: 'image/jpeg' }
+node ./start.mjs ext 'pdf' >> output.txt ;
+{ extension: 'pdf', mime: 'application/pdf' }
+node ./start.mjs htmlEntities '&#x3C' >> output.txt ;
+{ htmlEntitiesEncoded: '&amp;#x3C', htmlEntitiesDecoded: '<' }
+node ./start.mjs htmlEntities '<title>IT Tojol</title>' >> output.txt ;
+{
+  htmlEntitiesEncoded: '&lt;title&gt;IT Tojol&lt;/title&gt;',
+  htmlEntitiesDecoded: '<title>IT Tojol</title>'
+}
+node ./start.mjs htmlEntities 'Hello world :)' >> output.txt ;
+{
+  htmlEntitiesEncoded: 'Hello world :)',
+  htmlEntitiesDecoded: 'Hello world :)'
+}
+node ./start.mjs color '#1ea44b' >> output.txt ;
+HEX: #1ea44b, RGB: rgb(30, 164, 75), HSL: hsl(140, 69%, 38%)
+node ./start.mjs color 'hsl(140, -1%, 98%)' >> output.txt ;
+Invalid str format
+node ./start.mjs color 'rgb(30, 164, 75)' >> output.txt ;
+RGB: rgb(30, 164, 75), HEX: #1ea44b, HSL: hsl(140, 69%, 38%)
+node ./start.mjs case 'nikhilJainIsTheCute' >> output.txt ;
+{
+  lower: 'nikhil jain is the cute',
+  under: 'nikhil_jain_is_the_cute',
+  camel: 'nikhilJainIsTheCute',
+  mock: 'nIkhiL jAIn is THE cUtE',
+  upper: 'NIKHIL JAIN IS THE CUTE',
+  dash: 'nikhil-jain-is-the-cute'
+}
+node ./start.mjs case 'nikhil jain is the cute' >> output.txt ;
+{
+  lower: 'nikhil jain is the cute',
+  under: 'nikhil_jain_is_the_cute',
+  camel: 'nikhilJainIsTheCute',
+  mock: 'NikHil JaIN iS The cUtE',
+  upper: 'NIKHIL JAIN IS THE CUTE',
+  dash: 'nikhil-jain-is-the-cute'
+}
+node ./start.mjs case 'nikhil-jain-is-the-cute' >> output.txt ;
+{
+  lower: 'nikhil jain is the cute',
+  under: 'nikhil_jain_is_the_cute',
+  camel: 'nikhilJainIsTheCute',
+  mock: 'nIKHil Jain is thE cUTe',
+  upper: 'NIKHIL JAIN IS THE CUTE',
+  dash: 'nikhil-jain-is-the-cute'
+}
+node ./start.mjs bcrypt 'b.6f90mkN9ZLYtzzwN2GBkqegoC4Xi4Q2' 'nikhil' >> output.txt ;
+false
+node ./start.mjs base64 'nikhil' >> output.txt ;
+{ Encode: 'bmlraGls', Decode: '�)!�' }
+node ./start.mjs base64 'c29tZSB0ZXh0' >> output.txt ;
+{ Encode: 'YzI5dFpTQjBaWGgw', Decode: 'some text' }
+node ./start.mjs urlencode 'Hello world' >> output.txt ;
+{ encoded: 'Hello%20world', decoded: 'Hello world' }
+node ./start.mjs urlencode 'Hello%20world' >> output.txt ;
+{ encoded: 'Hello%2520world', decoded: 'Hello world' }
+node ./start.mjs hash 'string to hash' >> output.txt ;
+{
+  md5: '6af8c2df5270dbc0c4557a255ba6fffd',
+  sha1: 'e40871214d28a178b352c9392597f855d7dd6091',
+  sha256: '4904d96e05c2ba8ab5e28bfba3c31c2ca0ea6da94aa4245e79ee47107dbb683e',
+  sha512: 'a9cb347d873abceb5d6cc3812a0aea07751c6c6e454bb6c238b8a9db5c857b61511024c8c9d8a1ccc11190cff75302a5b6eb42d49e17ba0b5b9a75432e2da253'
+}

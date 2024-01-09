@@ -1,0 +1,21 @@
+{
+  "name": "nodecli",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nikhil Jain",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chrono": "^1.0.5",
+    "chrono-node": "^2.7.4",
+    "he": "^1.2.0",
+    "mime-db": "^1.52.0",
+    "moment": "^2.30.1",
+    "sugar-date": "^2.0.6"
+  }
+}
